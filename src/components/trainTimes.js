@@ -16,14 +16,15 @@ export class Summary extends Component {
     }
 
   
-
     render(){
       console.log('this.props', this.props.traintimes)
       const renderTrainTimes = _.map(this.props.traintimes, traintimes => {
         return (
-          <div>
-          {traintimes.attributes.departure_time}
-          {traintimes.attributes.status}
+          <div key={traintimes.id}>
+          <p>ID: {traintimes.id.split('prediction-CR-Weekday-Spring-18-')}</p>
+          <p>Arrival Time: {traintimes.attributes.arrival_time}</p>
+          <p>Departure Time: {traintimes.attributes.departure_time}</p>
+          <p>Status: {traintimes.attributes.status}</p>
           </div>
         )
         
