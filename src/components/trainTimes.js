@@ -21,7 +21,7 @@ export class Summary extends Component {
       const renderTrainTimes = _.map(this.props.traintimes, traintimes => {
         return (
           <div key={traintimes.id}>
-          <p>ID: {traintimes.id.split('prediction-CR-Weekday-Spring-18-')}</p>
+          <h4>Train Station: {traintimes.relationships.stop.data.id}</h4>
           <p>Arrival Time: {traintimes.attributes.arrival_time}</p>
           <p>Departure Time: {traintimes.attributes.departure_time}</p>
           <p>Status: {traintimes.attributes.status}</p>
